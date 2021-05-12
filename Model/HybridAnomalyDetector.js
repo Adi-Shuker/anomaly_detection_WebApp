@@ -77,13 +77,11 @@ class HybridAnomalyDetector extends SimpleAnomalyDetector {
     }
 
     isPointInCircle(point, circle) {
-        console.log(JSON.stringify(circle.center))
         const distance = HybridAnomalyDetector.distance(point, circle.center)
         return distance <= circle.radius
     }
 
     static distance(p1, p2) {
-        console.log(p2)
         const squareX = math.pow(p1.x - p2.x, 2)
         const squareY = math.pow(p1.y - p2.y, 2)
         return math.sqrt(squareX + squareY)
