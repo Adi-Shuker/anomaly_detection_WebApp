@@ -16,16 +16,23 @@ app.use(express.static('../View'))
 app.get('/', (req, res) => {
     res.sendFile('index.html')
 })
-//Post Method for '/search' url
-app.post('/search', (req, res) => {
-    res.write('searching for ' + req.body.key  +':\n')
-    let key = req.body.key
-    if (req.files) {
-        let file = req.files.text_file
-        let result = model.searchText(key, file.data.toString())
-        res.write(result)
+app.post('/detect', async (req, res) =>{
+    const modelType = req.body.algorithms
+    const trainData = req.files.train_data.data.toString();
+    const predictData = req.files.predict_data.data.toString();
+    const trainTimeSeries = new TimeSeries(trainData);
+    const predictTimeSeries = new TimeSeries(predictData);
+    let detector;
+
+    if(modelType ==='hybrid'){
+        detector = new HybridAnomalyDetector(0.9, 0.5);
+    }else{
+       detector = new SimpleAnomalyDetector(0.9);
     }
-    res.end()
+    detector.learnNormal(trainTimeSeries);
+    const anomalies = await detector.detect(predictTimeSeries);
+    res.json({anomalies});
+    res.end();
 })
 //starting server on port 8080
 app.listen(8080, ()=>console.log("server started at 8080"))
