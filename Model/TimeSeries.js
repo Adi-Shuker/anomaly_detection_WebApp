@@ -5,7 +5,7 @@ class TimeSeries {
     // ***************** Public Methods **************************
 
     constructor(line) {
-        const lines = line
+        const lines = line.split('\r\n');
         this.features = lines[0].split(',') // features are in the first line
         lines.shift()
         this.data = this.extractDataFromCsvLines(lines)
