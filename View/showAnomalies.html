@@ -2,8 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <style>
+        #anomalyTable tr:nth-child(even) {
+            background-color: #caced1;
+        }
+
+        #card {
+            border-radius: 15px;
+        }
+    </style>
 </head>
 <body>
-
+    <div id="card" class="demo-card-wide mdl-card mdl-shadow--2dp"
+         style="margin: auto; width: 50%">
+        <table id="anomalyTable"
+               class="mdl-data-table mdl-js-data-table"
+               style="width:100%; height: 100%; border: none">
+            <thead style="background-color: #CCE5FF">
+            <tr>
+                <th class="mdl-data-table__cell--non-numeric"
+                    style="color: black; text-align: center; font-size: medium">Feature 1</th>
+                <th class="mdl-data-table__cell--non-numeric"
+                    style="color: black; text-align: center; font-size: medium">Feature 2</th>
+                <th class="mdl-data-table__cell--non-numeric"
+                    style="color: black; text-align: center; font-size: medium">TimeStep</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
