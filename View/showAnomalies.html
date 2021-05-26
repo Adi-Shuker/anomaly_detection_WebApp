@@ -2,8 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <style>
+        #anomalyTable tr:nth-child(even) {
+            background-color: #caced1;
+        }
+
+        #card {
+            border-radius: 15px;
+        }
+    </style>
 </head>
 <body>
-
+    <div id="card" class="demo-card-wide mdl-card mdl-shadow--2dp"
+         style="margin: auto">
+        <table id="anomalyTable"
+               class="mdl-data-table mdl-js-data-table"
+               style="width:100%; height: 100%; border: none">
+            <thead style="background-color: #CCE5FF">
+            <tr>
+                <th class="mdl-data-table__cell--non-numeric" style="color: black">Feature 1</th>
+                <th class="mdl-data-table__cell--non-numeric" style="color: black">Feature 2</th>
+                <th class="mdl-data-table__cell--non-numeric" style="color: black">TimeStep</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="mdl-data-table__cell--non-numeric">A</td>
+                <td class="mdl-data-table__cell--non-numeric">B</td>
+                <td class="mdl-data-table__cell--non-numeric">1-20</td>
+            </tr>
+            <tr>
+                <td class="mdl-data-table__cell--non-numeric">C</td>
+                <td class="mdl-data-table__cell--non-numeric">D</td>
+                <td class="mdl-data-table__cell--non-numeric">3-8</td>
+            </tr>
+            <tr>
+                <td class="mdl-data-table__cell--non-numeric">C</td>
+                <td class="mdl-data-table__cell--non-numeric">D</td>
+                <td class="mdl-data-table__cell--non-numeric">3-8</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
