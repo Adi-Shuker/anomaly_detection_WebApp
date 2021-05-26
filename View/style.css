@@ -1,0 +1,63 @@
+#welcome
+{
+    font-size: 3em;
+    font-weight: bold; /*gras*/
+    color: black;
+    position:absolute; top: -45px; left: 230px;
+}
+
+#choiceAlgoText
+{
+    font-size: 1.3em;
+    color: black;
+    position:absolute; top: 80px; left: 750px;
+}
+
+#choiceAlgoButton
+{
+    position:absolute; top: 83px; left: 950px;
+    height: 20px;
+}
+
+#validFlightText
+{
+    font-size: 1.2em;
+    color: black;
+    position:absolute; top: 100px; left: 750px;
+}
+
+#validFlightButton
+{
+    position:absolute; top: 120px; left: 1037px;
+}
+
+#detectFlightText
+{
+    font-size: 1.2em;
+    color: black;
+    position:absolute; top: 140px; left: 750px;
+}
+
+#detectFlightButton
+{
+    position:absolute; top: 160px; left: 1037px;
+}
+
+#background {
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+#startFlying {
+    position:absolute; top: 80px; left: 20px;
+}
+
+#frame {
+    position:relative;
+    top: 140px;
+    width: 100%;
+    height: 335px;
+    border: none;
+    overflow: hidden;
+}
+

@@ -6,7 +6,7 @@
     <title>Anomaly Detection Server</title>
 </head>
 <body background="airplane.JPEG" id="background">
-<form action="/detect" method="post" enctype="multipart/form-data" name="searchForm" target="result">
+<form action="/detect" method="post" enctype="multipart/form-data" name="submitForm" target="result">
     <table>
         <td id="startFlying"> <input type="submit" value="Start Flying!" style="width: 120px; height:40px; font-size: 1.2em" ></td>
         <tr><p id="welcome"> Welcome to Anomaly Detection Server! </p></tr>
@@ -23,11 +23,11 @@
         </tr>
         <tr>
             <td><p id="validFlightText"> Select a CSV file for the valid flight: </p></td>
-            <td id="validFlightButton"> <input type="file" accept=".csv" name="train_data"></td>
+            <td id="validFlightButton"> <input type="file" accept=".csv" name="train_data" required></td>
         </tr>
         <tr>
             <td><p id="detectFlightText">Select a CSV file for flight to detect: </p></td>
-            <td id="detectFlightButton"> <input type="file" accept=".csv" name="predict_data"></td>
+            <td id="detectFlightButton"> <input type="file" accept=".csv" name="predict_data" required></td>
         </tr>
         <br>
     </table>
