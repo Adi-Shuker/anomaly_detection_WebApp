@@ -61,6 +61,7 @@
 
 
 #StartFlyingButton {
+    font-family: "Garamond", serif;
     background-color: #7b38d8;
     border-radius: 10px;
     border: 4px double #cccccc;

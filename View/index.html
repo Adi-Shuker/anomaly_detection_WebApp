@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="style.css" />
     <title>Anomaly Detection Server</title>
 </head>
-<body background="airplane2.png" id="background">
+<body background="airplane2.png" id="background" style="font-family: Garamond,serif; font-weight: bolder">
 <form action="/detect" method="post" enctype="multipart/form-data" name="searchForm" target="result">
     <table>
         <td> <input type="submit" id="StartFlyingButton" value="Submit"></td>
@@ -15,7 +15,7 @@
                 <label id="choiceAlgoText" for="algorithms">Choose an algorithm:</label>
             </td>
             <td>
-                <select id="choiceAlgoButton" name="algorithms" id="algorithms">
+                <select id="choiceAlgoButton" name="algorithms" id="algorithms" style="font-family: Garamond,serif">
                     <option value="hybrid">hybrid</option>
                     <option value="regression">regression</option>
                 </select>
@@ -23,11 +23,15 @@
         </tr>
         <tr>
             <td><p id="validFlightText"> Select a CSV file for the valid flight: </p></td>
-            <td id="validFlightButton"> <input type="file" name="train_data" accept=".csv" required></td>
+            <td id="validFlightButton">
+                <input style="font-family: Garamond,serif" type="file" name="train_data" accept=".csv" required>
+            </td>
         </tr>
         <tr>
             <td><p id="detectFlightText">Select a CSV file for flight to detect: </p></td>
-            <td id="detectFlightButton"> <input type="file" name="predict_data" accept=".csv" required></td>
+            <td id="detectFlightButton">
+                <input style="font-family: Garamond,serif" type="file" name="predict_data" accept=".csv" required>
+            </td>
         </tr>
         <br>
     </table>
