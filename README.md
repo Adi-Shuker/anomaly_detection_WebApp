@@ -2,17 +2,17 @@
 
 # About The Project
 
-Anomaly Detection Server is a web application for detecting anomalies based on a specific algorithm. The user selects an algorithm from a drop-down list
-that includes a based algorithm regression and an hybrid algorithm, upload two csv files, clicks on submit and the files are uploaded to the server.<br>
+Anomaly Detection Server is a web application for detecting anomalies based on a specific algorithm. The user can select an algorithm in a drop-down list
+that includes a based algorithm regression and an hybrid algorithm and upload two csv files. To submit, he has to click on the button "submit" and then the files are uploaded to the server.<br>
 
-The two data files the user has to upload to the app are:  <br>
+The two data files to upload are:  <br>
 1) csv file for the valid flight  <br>
 2) csv file for the the flight to detect. <br>
 
-Each file contains the values of the attributes at each moment during the flight <br>
+Each file contains the values of the features per second during the flight. <br>
 
-The server learns from the valid flight the normal behavior of the features and according to it, detects anomalies of the second file. <br>
-The detected anomalies are displaying in a table on the screen. The table contains a list of all the anomalies, the 2 most correlatives features and the time step where the anomaly occurs.
+The server learns from the valid data file the normal behavior of the flight and according to it, detects anomalies in the second file. <br>
+The detected anomalies are displayed in a table. This table lists all the anomalies with 3 columns: the 2 most correlatives features and the time when the anomaly occurs.
 
 <br>
 
@@ -52,13 +52,13 @@ npm start
 
 
 3) Open the browser at the address http://localhost:8080/
-4) Upload your csv files and choose an anomaly detector type. <br>
+4) Upload your csv files and choose an anomaly detector algorithm. <br>
 5) Press *Submit* to start the anomalies detection. <br>
 
 <br>
 
 
- ![alt tag](https://user-images.githubusercontent.com/81378726/119669390-b17ee580-be40-11eb-87f9-88ee3b23e7d1.jpeg)
+ ![alt tag](https://user-images.githubusercontent.com/81378726/120083029-bf499a80-c0ce-11eb-99e0-47e040bda3c4.PNG)
 <br>
 
 # Code Design and UML:
@@ -85,7 +85,7 @@ MVC is one of the most frequently used industry-standard web development framewo
 
 # Video Explanation 
 
-https://youtu.be/230t_UPn8s0
+https://youtu.be/Vu_vjSpWLh8
 
 # Contributors
 This program was developed by Adi-Shuker, Shana026, yairshp
