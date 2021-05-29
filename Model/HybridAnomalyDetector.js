@@ -1,6 +1,5 @@
 const enclosingCircle = require('smallest-enclosing-circle')
 const math = require('mathjs')
-
 const SimpleAnomalyDetector = require('./SimpleAnomalyDetector')
 const AnomalyDetectionUtil = require('./AnomalyDetectionUtil')
 const CorrelationType = require('./CorrelationType')
