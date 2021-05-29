@@ -58,7 +58,7 @@ npm start
 <br>
 
 
- ![alt tag](https://user-images.githubusercontent.com/81378726/119669390-b17ee580-be40-11eb-87f9-88ee3b23e7d1.jpeg)
+ ![alt tag](https://user-images.githubusercontent.com/81378726/120083029-bf499a80-c0ce-11eb-99e0-47e040bda3c4.PNG)
 <br>
 
 # Code Design and UML:
