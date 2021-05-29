@@ -11,8 +11,6 @@ The two data files to upload are:  <br>
 
 Each file contains the values of the features per second during the flight. <br>
 
-The server compares the two files in order to detect the anomalies
-
 The server learns from the valid data file the normal behavior of the flight and according to it, detects anomalies in the second file. <br>
 The detected anomalies are displayed in a table. This table lists all the anomalies with 3 columns: the 2 most correlatives features and the time when the anomaly occurs.
 
