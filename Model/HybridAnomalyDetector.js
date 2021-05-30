@@ -18,7 +18,6 @@ class HybridAnomalyDetector extends SimpleAnomalyDetector {
 
         features.forEach(feature => {
             const { max_correlated_feature, max_correlation } = super.getMaxCorrelation(feature, timeSeries)
-
             const feature1_values = timeSeries.getFeatureValues(feature)
             const feature2_values = timeSeries.getFeatureValues(max_correlated_feature)
 
