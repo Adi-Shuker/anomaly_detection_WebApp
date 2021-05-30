@@ -1,5 +1,7 @@
 //imports modules
 const express = require('express')
+const bodyParser = require('body-parser')
+const axios = require('axios')
 const fileUpload = require('express-fileupload')
 const app = express()
 const SimpleAnomalyDetector = require("../Model/SimpleAnomalyDetector");
@@ -7,11 +9,8 @@ const HybridAnomalyDetector = require("../Model/HybridAnomalyDetector");
 const TimeSeries = require("../Model/TimeSeries");
 const fs = require('fs')
 
-
-function createTableRow(feature1, feature2, timeStep) {
-    const openTd = "<td class=\"mdl-data-table__cell--non-numeric\">"
-    const closeTd = "</td>"
-}
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 function createAnomaliesView(anomalies) {
     let basicHtml = fs.readFileSync('View/showAnomalies.html', 'utf-8')
@@ -50,14 +49,35 @@ app.use(express.urlencoded({
 }))
 app.use(fileUpload({}))
 app.use(express.static('View'))
+
+
 //Get Method for '/' url
 app.get('/', (req, res) => {
     res.sendFile('index.html')
 })
+
+
+app.post('/showAnomalies', async (req, res) => {
+    const data = {
+        algorithms: req.body.algorithms,
+        trainData: req.files.train_data.data.toString(),
+        predictData: req.files.predict_data.data.toString()
+    }
+    axios.post('http://localhost:8080/detect', data)
+        .then(response => {
+            res.send(createAnomaliesView(response.data))
+        })
+        .catch(error => {
+            res.status(400)
+            res.sendFile('showError.html', {root: 'View'})
+        })
+})
+
+
 app.post('/detect', async (req, res) =>{
     const modelType = req.body.algorithms
-    const trainData = req.files.train_data.data.toString();
-    const predictData = req.files.predict_data.data.toString();
+    const trainData = req.body.trainData
+    const predictData = req.body.predictData
     const trainTimeSeries = new TimeSeries(trainData);
     const predictTimeSeries = new TimeSeries(predictData);
     let detector;
@@ -70,10 +90,10 @@ app.post('/detect', async (req, res) =>{
     try {
         detector.learnNormal(trainTimeSeries);
         const anomalies = await detector.detect(predictTimeSeries);
-        res.send(createAnomaliesView(anomalies))
+        // res.send(createAnomaliesView(anomalies))
+        res.send(anomalies)
     } catch (e) {
-        console.log("")
-        res.sendFile('showError.html', {root: 'View'})
+        res.status(400)
     }
 })
 //starting server on port 8080
